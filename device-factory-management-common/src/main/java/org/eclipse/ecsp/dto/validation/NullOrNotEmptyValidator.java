@@ -47,7 +47,7 @@ import jakarta.validation.ConstraintValidatorContext;
  * </pre>
  *
  * @see NullOrNotEmpty
- * @see javax.validation.ConstraintValidator
+ * @see jakarta.validation.ConstraintValidator
  */
 public class NullOrNotEmptyValidator implements ConstraintValidator<NullOrNotEmpty, String> {
 

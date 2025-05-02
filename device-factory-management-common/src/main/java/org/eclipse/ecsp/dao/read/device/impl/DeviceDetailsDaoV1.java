@@ -42,9 +42,19 @@ public class DeviceDetailsDaoV1 extends AbstractDeviceDetailsDaoV1 {
 
     private final NamedParameterJdbcTemplate namedParamJdbcTemplate;
 
+    
     /**
-     * This class represents a DAO (Data Access Object) for retrieving device details.
-     * It provides methods to interact with the database and retrieve device information.
+     * DAO implementation for retrieving device details using JDBC.
+     * This class utilizes a {@link NamedParameterJdbcTemplate} for executing
+     * SQL queries with named parameters.
+     *
+     * @author Akshay
+     * @version 1.0
+     * @since 1.0
+     *
+     * @param namedParamJdbcTemplate the {@link NamedParameterJdbcTemplate} instance
+     *                               used for database operations. This is injected
+     *                               automatically by Spring's dependency injection.
      */
     @Autowired
     public DeviceDetailsDaoV1(NamedParameterJdbcTemplate namedParamJdbcTemplate) {

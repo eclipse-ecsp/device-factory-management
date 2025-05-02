@@ -29,6 +29,11 @@ import org.slf4j.LoggerFactory;
  */
 public abstract class AbstractDeviceDetailsDaoV4 implements IdeviceDetailsDaoV4 {
 
+    /**
+     * Logger instance for logging messages related to the AbstractDeviceDetailsDaoV4 class.
+     * This logger is used to log debug, info, warning, and error messages for troubleshooting
+     * and monitoring purposes.
+     */
     protected static final Logger LOGGER = LoggerFactory.getLogger(AbstractDeviceDetailsDaoV4.class);
 
     /**

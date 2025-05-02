@@ -26,18 +26,65 @@ import java.io.Serializable;
  * The base class for device details DTOs.
  */
 public abstract class DeviceDetailsBaseDto implements Serializable {
+    /**
+     * The SSID (Service Set Identifier) of the device.
+     */
     protected String ssid;
+
+    /**
+     * The ICCID (Integrated Circuit Card Identifier) of the device.
+     */
     protected String iccid;
+
+    /**
+     * The MSISDN (Mobile Station International Subscriber Directory Number) of the device.
+     */
     protected String msisdn;
+
+    /**
+     * The IMSI (International Mobile Subscriber Identity) of the device.
+     */
     protected String imsi;
+
+    /**
+     * The BSSID (Basic Service Set Identifier) of the device.
+     */
     protected String bssid;
+
+    /**
+     * The package serial number of the device.
+     */
     protected String packageserialnumber;
 
+    /**
+     * The ascending order value for sorting.
+     */
     protected String asc;
+
+    /**
+     * The descending order value for sorting.
+     */
     protected String desc;
+
+    /**
+     * The size of the device details, typically used for pagination.
+     */
     protected String size;
+
+    /**
+     * The page number of the device details, typically used for pagination.
+     */
     protected String page;
+
+    /**
+     * The field by which the device details should be sorted.
+     */
     protected String sortBy;
+
+    /**
+     * The order in which to sort the device details.
+     * This can be used to specify ascending or descending order.
+     */
     protected String orderBy;
 
     /**

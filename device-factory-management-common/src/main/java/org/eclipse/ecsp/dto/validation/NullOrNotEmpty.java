@@ -42,19 +42,17 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  * <p>
  * The validation logic is implemented in the {@code NullOrNotEmptyValidator} class.
  * </p>
- * 
- * <p>
- * Example usage:
+ *
+ * <p>Example usage:
  * <pre>
  * {@code
  * @NullOrNotEmpty
  * private String exampleField;
  * }
  * </pre>
- * </p>
  * 
- * <p>
- * Attributes:
+ *
+ * <p>Attributes:
  * <ul>
  *   <li><b>message:</b> Custom error message to be used when validation fails. 
  *       Defaults to "{jakarta.validation.constraints.NullOrNotEmpty.message}".</li>
@@ -62,11 +60,8 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
  *   <li><b>payload:</b> Can be used by clients to assign custom payload objects 
  *       to a constraint.</li>
  * </ul>
- * </p>
- * 
- * <p>
- * This annotation is retained at runtime and is documented in the generated Javadoc.
- * </p>
+ *
+ * <p>This annotation is retained at runtime and is documented in the generated Javadoc.
  *
  * @see NullOrNotEmptyValidator
  * @author Your Name

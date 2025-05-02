@@ -24,6 +24,13 @@ package org.eclipse.ecsp.common;
  * The {@code DatabaseConstants} class contains constants related to the database.
  */
 public final class DatabaseConstants {
+    /**
+     * The timestamp format used for device factory data.
+     * This format follows the pattern "yyyy/MM/dd", where:
+     * - "yyyy" represents the year in four digits.
+     * - "MM" represents the month in two digits.
+     * - "dd" represents the day in two digits.
+     */
     public static final String DEVICEINFOFACTORYDATA_TIMESTAMP_FORMAT = "yyyy/MM/dd";
 
     /**

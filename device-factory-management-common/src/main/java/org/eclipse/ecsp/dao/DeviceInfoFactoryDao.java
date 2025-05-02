@@ -46,25 +46,23 @@ import java.util.Map;
 /**
  * Inserts data into the DeviceInfoFactoryData table.
  *
- * @param factoryData The factory data to be inserted.
- * @param userId The user ID associated with the data.
  */
 @Component
 public class DeviceInfoFactoryDao {
-    public static final int INDEX_2 = 2;
-    public static final int INDEX_3 = 3;
-    public static final int INDEX_4 = 4;
-    public static final int INDEX_5 = 5;
-    public static final int INDEX_6 = 6;
-    public static final int INDEX_7 = 7;
-    public static final int INDEX_8 = 8;
-    public static final int INDEX_9 = 9;
-    public static final int INDEX_10 = 10;
-    public static final int INDEX_11 = 11;
-    public static final int INDEX_12 = 12;
-    public static final int INDEX_13 = 13;
-    public static final int INDEX_14 = 14;
-    public static final int INDEX_15 = 15;
+    private static final int INDEX_2 = 2;
+    private static final int INDEX_3 = 3;
+    private static final int INDEX_4 = 4;
+    private static final int INDEX_5 = 5;
+    private static final int INDEX_6 = 6;
+    private static final int INDEX_7 = 7;
+    private static final int INDEX_8 = 8;
+    private static final int INDEX_9 = 9;
+    private static final int INDEX_10 = 10;
+    private static final int INDEX_11 = 11;
+    private static final int INDEX_12 = 12;
+    private static final int INDEX_13 = 13;
+    private static final int INDEX_14 = 14;
+    private static final int INDEX_15 = 15;
     private static final Logger LOGGER = LoggerFactory.getLogger(DeviceInfoFactoryDao.class);
     private final SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy/MM/dd");
     @Autowired

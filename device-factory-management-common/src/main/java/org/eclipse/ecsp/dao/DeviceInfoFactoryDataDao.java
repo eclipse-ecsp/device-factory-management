@@ -76,10 +76,23 @@ import static org.eclipse.ecsp.dto.DeviceState.valueOf;
 @Slf4j
 public class DeviceInfoFactoryDataDao {
 
+    /**
+     * A constant representing the column name "ID" in the database.
+     * This is used to reference the "ID" field in SQL queries or database operations.
+     */
     public static final String ID = "\"ID\"";
+
+    /**
+     * Constant representing the database column or field name for the IMEI (International Mobile Equipment Identity).
+     * This is used to uniquely identify a mobile device in the system.
+     */
     public static final String IMEI = "imei";
+
+    /**
+     * Constant representing the column name for the serial number in the database.
+     */
     public static final String SERIAL_NUMBER = "serial_number";
-    public static final String UPDATE_DEVICE_INFO_FACTORY_DATA_SQL = "update public.\"DeviceInfoFactoryData\" set ";
+    private static final String UPDATE_DEVICE_INFO_FACTORY_DATA_SQL = "update public.\"DeviceInfoFactoryData\" set ";
     private static final String STATE = "state";
     private static final String VIN_BY_SERIAL_NUMBER =
         "select b.vin from \"DeviceInfoFactoryData\" a, vin_details b where a.\"ID\"=b.reference_id and"
@@ -91,24 +104,24 @@ public class DeviceInfoFactoryDataDao {
     private static final String WHERE = " WHERE ";
     private static final String WHERE_OPERATOR = "WHERE ";
     private static final String PAGE_FILTER = "LIMIT :limit OFFSET :offset";
-    public static final int INDEX_2 = 2;
-    public static final int INDEX_3 = 3;
-    public static final int INDEX_4 = 4;
-    public static final int INDEX_5 = 5;
-    public static final int INDEX_6 = 6;
-    public static final int INDEX_7 = 7;
-    public static final int INDEX_8 = 8;
-    public static final int INDEX_9 = 9;
-    public static final int INDEX_10 = 10;
-    public static final int INDEX_11 = 11;
-    public static final int INDEX_12 = 12;
-    public static final int INDEX_13 = 13;
-    public static final int INDEX_14 = 14;
-    public static final int INDEX_15 = 15;
-    public static final int INDEX_16 = 16;
-    public static final int INDEX_17 = 17;
-    public static final int INDEX_18 = 18;
-    public static final int INDEX_19 = 19;
+    private static final int INDEX_2 = 2;
+    private static final int INDEX_3 = 3;
+    private static final int INDEX_4 = 4;
+    private static final int INDEX_5 = 5;
+    private static final int INDEX_6 = 6;
+    private static final int INDEX_7 = 7;
+    private static final int INDEX_8 = 8;
+    private static final int INDEX_9 = 9;
+    private static final int INDEX_10 = 10;
+    private static final int INDEX_11 = 11;
+    private static final int INDEX_12 = 12;
+    private static final int INDEX_13 = 13;
+    private static final int INDEX_14 = 14;
+    private static final int INDEX_15 = 15;
+    private static final int INDEX_16 = 16;
+    private static final int INDEX_17 = 17;
+    private static final int INDEX_18 = 18;
+    private static final int INDEX_19 = 19;
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -1121,15 +1134,33 @@ public class DeviceInfoFactoryDataDao {
     }
 
     /**
-     * Enum representing the different types of input for device details.
-     * The available input types are:
-     * - IMEI
-     * - SERIAL_NUMBER
-     * - DEVICE_ID
-     * - VIN
-     * - STATE
+     * Enum representing the types of input that can be used to identify device details.
      */
     public enum DeviceDetailsInputTypeEnum {
-        IMEI, SERIAL_NUMBER, DEVICE_ID, VIN, STATE;
+
+        /**
+         * International Mobile Equipment Identity (IMEI) number, a unique identifier for mobile devices.
+         */
+        IMEI, 
+
+        /**
+         * Serial number, a unique identifier assigned to a device by the manufacturer.
+         */
+        SERIAL_NUMBER, 
+
+        /**
+         * Device ID, a unique identifier specific to the device.
+         */
+        DEVICE_ID, 
+
+        /**
+         * Vehicle Identification Number (VIN), a unique code used to identify individual motor vehicles.
+         */
+        VIN, 
+
+        /**
+         * State, representing the current state or status of the device.
+         */
+        STATE;
     }
 }

@@ -56,30 +56,41 @@ public abstract class AbstractDeviceFactoryDataDao implements IdeviceFactoryData
             + "\"platform_version\",\"iccid\",\"ssid\",\"bssid\",\"msisdn\",\"imsi\",\"record_date\",\"factory_admin\","
             + "\"created_date\",\"state\",\"package_serial_number\",\"device_type\",\"region\")"
             + " values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-    public static final String IMEI = "imei";
-    protected static final Logger LOGGER = LoggerFactory.getLogger(AbstractDeviceFactoryDataDao.class);
-    public final SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy/MM/dd");
-    public static final int INDEX_2 = 2;
-    public static final int INDEX_3 = 3;
-    public static final int INDEX_4 = 4;
-    public static final int INDEX_5 = 5;
-    public static final int INDEX_6 = 6;
-    public static final int INDEX_7 = 7;
-    public static final int INDEX_8 = 8;
-    public static final int INDEX_9 = 9;
-    public static final int INDEX_10 = 10;
-    public static final int INDEX_11 = 11;
-    public static final int INDEX_12 = 12;
-    public static final int INDEX_13 = 13;
-    public static final int INDEX_14 = 14;
-    public static final int INDEX_15 = 15;
-    public static final int INDEX_16 = 16;
-    public static final int INDEX_17 = 17;
-    public static final int INDEX_18 = 18;
-    public static final int INDEX_19 = 19;
+    private static final String IMEI = "imei";
+    private static final Logger LOGGER = LoggerFactory.getLogger(AbstractDeviceFactoryDataDao.class);
+    private final SimpleDateFormat dateFormatter = new SimpleDateFormat("yyyy/MM/dd");
+    private static final int INDEX_2 = 2;
+    private static final int INDEX_3 = 3;
+    private static final int INDEX_4 = 4;
+    private static final int INDEX_5 = 5;
+    private static final int INDEX_6 = 6;
+    private static final int INDEX_7 = 7;
+    private static final int INDEX_8 = 8;
+    private static final int INDEX_9 = 9;
+    private static final int INDEX_10 = 10;
+    private static final int INDEX_11 = 11;
+    private static final int INDEX_12 = 12;
+    private static final int INDEX_13 = 13;
+    private static final int INDEX_14 = 14;
+    private static final int INDEX_15 = 15;
+    private static final int INDEX_16 = 16;
+    private static final int INDEX_17 = 17;
+    private static final int INDEX_18 = 18;
+    private static final int INDEX_19 = 19;
 
+    /**
+     * The {@link JdbcTemplate} instance used for interacting with the database.
+     * This is an autowired dependency, which means it is automatically injected
+     * by the Spring framework. It provides methods for executing SQL queries
+     * and updates, simplifying database access in the application.
+     */
     @Autowired
     protected JdbcTemplate jdbcTemplate;
+    /**
+     * The Data Access Object (DAO) for managing device factory information.
+     * This field is automatically injected by the Spring Framework using the
+     * {@code @Autowired} annotation.
+     */
     @Autowired
     private DeviceInfoFactoryDataDao factoryDao;
 
