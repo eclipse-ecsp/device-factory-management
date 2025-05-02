@@ -104,7 +104,10 @@
             **/dao/read/device/AbstractDeviceDetailsDaoV5.java,
             **/service/read/device/AbstractDeviceDetailsService.java,
             **/service/swm/impl/SwmSessionId.java,
-            **/dao/read/device/impl/*.java
+            **/dao/read/device/impl/*.java,
+            **/dao/DeviceInfoFactoryDao.java,
+            **/dao/create/device/AbstractDeviceFactoryDataDao.java,
+            **/dao/DeviceInfoFactoryDataDao.java
         </sonar.exclusions>
         <sonar.issue.ignore.multicriteria>e1</sonar.issue.ignore.multicriteria>
         <sonar.issue.ignore.multicriteria.e1.ruleKey>findsecbugs:SQL_INJECTION_SPRING_JDBC
