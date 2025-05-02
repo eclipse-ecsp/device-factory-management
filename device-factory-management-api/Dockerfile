@@ -1,16 +1,16 @@
 FROM tomcat:10.1.40-jdk17
 
-ARG ENVIRONMENT
-RUN echo ${ENVIRONMENT}
+#ARG ENVIRONMENT
+#RUN echo ${ENVIRONMENT}
 
 ENV CATALINA_OPTS="-server -Xmx2G -Xms1G -XX:+UseG1GC -XX:MaxGCPauseMillis=20 -XX:InitiatingHeapOccupancyPercent=35 -XX:+DisableExplicitGC -Djava.awt.headless=true"
 ADD /target/device-factory-management.war /tmp/hcp-deviceinfoquery-webapp.war
 COPY src/scripts/* /opt/hcp-deviceinfoquery-webapp/bin/
 # Add conf directory
-ADD config/${ENVIRONMENT}/ /usr/local/tomcat/conf/hcp-deviceinfoquery-webapp/
+ADD config/dev/ /usr/local/tomcat/conf/hcp-deviceinfoquery-webapp/
 
 # Add context file
-ADD config/${ENVIRONMENT}/context.xml /usr/local/tomcat/conf/Catalina/localhost/hcp-deviceinfoquery-webapp.xml
+ADD config/dev/context.xml /usr/local/tomcat/conf/Catalina/localhost/hcp-deviceinfoquery-webapp.xml
 
 RUN chmod 755 /opt/hcp-deviceinfoquery-webapp/bin/start.sh
 
