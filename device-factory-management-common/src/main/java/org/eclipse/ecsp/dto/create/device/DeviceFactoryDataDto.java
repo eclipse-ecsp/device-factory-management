@@ -76,7 +76,7 @@ public class DeviceFactoryDataDto implements Serializable {
      * Constructs a new DeviceFactoryDataDto object with default values.
      */
     public DeviceFactoryDataDto() {
-
+        //don't do anything
     }
 
     /**

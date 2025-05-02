@@ -410,7 +410,7 @@ public final class CommonConstants {
     /**
      * Constant representing the key for the "=" field.
      */
-    public static final String EQUALS = "=";
+    public static final String EQUAL = "=";
     /**
      * Constant representing the key for the "AND" field.
      */

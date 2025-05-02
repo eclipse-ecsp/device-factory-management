@@ -34,6 +34,8 @@ public class DeviceStateHistoryDataMapper implements RowMapper<DeviceStateHistor
 
     private static final DeviceStateHistoryDataMapper DEVICE_STATE_HISTORY_DATA_MAPPER =
         new DeviceStateHistoryDataMapper();
+    
+    private static final String STATE = "state";
 
     /**
      * Returns the singleton instance of DeviceStateHistoryDataMapper.
@@ -56,7 +58,7 @@ public class DeviceStateHistoryDataMapper implements RowMapper<DeviceStateHistor
     public DeviceStateHistory mapRow(ResultSet resultSet, int rowNum) throws SQLException {
 
         DeviceStateHistory stateHistory = new DeviceStateHistory();
-        stateHistory.setState(resultSet.getString("state"));
+        stateHistory.setState(resultSet.getString(STATE));
         stateHistory.setStateTimestamp(resultSet.getTimestamp("created_timestamp"));
         stateHistory.setManufacturingDate(resultSet.getTimestamp("manufacturing_date"));
         stateHistory.setBssid(resultSet.getString("bssid"));
@@ -70,8 +72,8 @@ public class DeviceStateHistoryDataMapper implements RowMapper<DeviceStateHistor
         stateHistory.setRecordDate(resultSet.getTimestamp("record_date"));
         stateHistory.setCreatedDate(resultSet.getTimestamp("factory_created_date"));
         stateHistory.setFactoryAdmin(resultSet.getString("factory_admin"));
-        stateHistory.setFaulty(resultSet.getString("state").equalsIgnoreCase("FAULTY") ? Boolean.TRUE : Boolean.FALSE);
-        stateHistory.setStolen(resultSet.getString("state").equalsIgnoreCase("STOLEN") ? Boolean.TRUE : Boolean.FALSE);
+        stateHistory.setFaulty(resultSet.getString(STATE).equalsIgnoreCase("FAULTY") ? Boolean.TRUE : Boolean.FALSE);
+        stateHistory.setStolen(resultSet.getString(STATE).equalsIgnoreCase("STOLEN") ? Boolean.TRUE : Boolean.FALSE);
         stateHistory.setPackageSerialNumber(resultSet.getString("package_serial_number"));
         stateHistory.setModel(resultSet.getString("model"));
 

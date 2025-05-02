@@ -72,7 +72,7 @@ public class DeviceInfoFactoryDataRequest implements Serializable {
      * Constructs a new DeviceInfoFactoryDataRequest object.
      */
     public DeviceInfoFactoryDataRequest() {
-
+        // don't do anything
     }
 
     /**

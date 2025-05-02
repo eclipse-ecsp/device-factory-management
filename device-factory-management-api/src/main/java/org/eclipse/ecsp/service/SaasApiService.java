@@ -94,6 +94,6 @@ public class SaasApiService {
     private String getSystemParamsUrlForSystemParamsKey(String systemParamKeys) {
         return baseUrl + CommonConstants.URL_SEPARATOR + baseVersion + CommonConstants.URL_SEPARATOR
             + CommonConstants.SYS_PARAMS + CommonConstants.QUESTION_MARK + CommonConstants.SYS_PARAM_KEYS
-            + CommonConstants.EQUALS + systemParamKeys;
+            + CommonConstants.EQUAL + systemParamKeys;
     }
 }
