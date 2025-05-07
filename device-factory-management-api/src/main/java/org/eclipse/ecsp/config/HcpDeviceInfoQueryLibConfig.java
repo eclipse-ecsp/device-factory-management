@@ -23,6 +23,8 @@ package org.eclipse.ecsp.config;
 import jakarta.annotation.Resource;
 import org.eclipse.ecsp.common.config.EnvConfig;
 import org.eclipse.ecsp.common.config.EnvConfigLoader;
+import org.springframework.boot.autoconfigure.ImportAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.client.RestTemplateAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
@@ -31,6 +33,7 @@ import org.springframework.validation.beanvalidation.MethodValidationPostProcess
  * Configuration class for HcpDeviceInfoQueryLib.
  */
 @Configuration
+@ImportAutoConfiguration(RestTemplateAutoConfiguration.class)
 public class HcpDeviceInfoQueryLibConfig {
 
     @Resource(name = "envConfigLoaderDeviceInfoQuery")
