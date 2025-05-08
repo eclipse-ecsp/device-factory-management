@@ -1,7 +1,10 @@
 [<img src="./images/logo.png" width="300" height="150"/>](logo.png)
 
-[![Build](../../actions/workflows/maven-build.yml/badge.svg)](../../actions/workflows/maven-build.yml)
-[![License Compliance](../../actions/workflows/license-compliance.yml/badge.svg)](../../actions/workflows/license-compliance.yml)
+[![Maven Build & Sonar Analysis](https://github.com/eclipse-ecsp/device-factory-management/actions/workflows/maven-build.yml/badge.svg)](https://github.com/eclipse-ecsp/device-factory-management/actions/workflows/maven-build.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=eclipse-ecsp_device-factory-management&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=eclipse-ecsp_device-factory-management)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=eclipse-ecsp_device-factory-management&metric=vulnerabilities)](https://sonarcloud.io/summary/new_code?id=eclipse-ecsp_device-factory-management)
+[![License Compliance](https://github.com/eclipse-ecsp/device-factory-management/actions/workflows/licence-compliance.yaml/badge.svg)](https://github.com/eclipse-ecsp/device-factory-management/actions/workflows/licence-compliance.yaml)
+[![Latest Release](https://img.shields.io/github/v/release/eclipse-ecsp/device-factory-management?sort=semver)](https://github.com/eclipse-ecsp/device-factory-management/releases)
 
 # Device Factory Management
 
