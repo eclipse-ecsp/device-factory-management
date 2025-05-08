@@ -208,7 +208,7 @@ public class DeviceController {
     @Operation(summary = "POST /v1/devices/create", responses = {
         @io.swagger.v3.oas.annotations.responses.ApiResponse(description = "Success", responseCode = "200",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE))})
-    @SecurityRequirement(name = Security.Fields.JWT_AUTH_VALIDATOR, scopes = { "IgniteSystem"})
+    @SecurityRequirement(name = "JwtAuthValidator", scopes = { "IgniteSystem"})
     public ResponseEntity<Object> addDevices(@RequestBody @Valid DeviceInfoFactoryDataRequest[] deviceInfoFactoryData,
                                              @RequestHeader(USER_ID) String userId) {
         String userIdForAddDevice = userId.replaceAll(REQUEST_REGEX, "");
@@ -231,7 +231,7 @@ public class DeviceController {
     @Operation(summary = "POST /v2/devices/create", responses = {
         @io.swagger.v3.oas.annotations.responses.ApiResponse(description = "Success", responseCode = "200",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE))})
-    @SecurityRequirement(name = Security.Fields.JWT_AUTH_VALIDATOR, scopes = { "IgniteSystem"})
+    @SecurityRequirement(name = "JwtAuthValidator", scopes = { "IgniteSystem"})
     public ResponseEntity<ApiResponse<Object>> createDevicesV2(
         @RequestBody @Valid DeviceFactoryDataDto[] deviceFactoryDataDtos,
         @RequestHeader(USER_ID) String userId) {
@@ -282,7 +282,7 @@ public class DeviceController {
     @Operation(summary = "POST /v3/devices/create", responses = {
         @io.swagger.v3.oas.annotations.responses.ApiResponse(description = "Success", responseCode = "200",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE))})
-    @SecurityRequirement(name = Security.Fields.JWT_AUTH_VALIDATOR, scopes = { "IgniteSystem"})
+    @SecurityRequirement(name = "JwtAuthValidator", scopes = { "IgniteSystem"})
     public ResponseEntity<ApiResponse<Object>> createDevicesV3(
         @RequestBody @Valid DeviceFactoryDataDto[] deviceFactoryDataDtos,
         @RequestHeader(USER_ID) String userId) {
@@ -372,7 +372,7 @@ public class DeviceController {
     @Operation(summary = "GET /v1/devices/details", responses = {
         @io.swagger.v3.oas.annotations.responses.ApiResponse(description = "Success", responseCode = "200",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE))})
-    @SecurityRequirement(name = Security.Fields.JWT_AUTH_VALIDATOR, scopes = { "IgniteSystem"})
+    @SecurityRequirement(name = "JwtAuthValidator", scopes = { "IgniteSystem"})
     public ResponseEntity<Object> findFactoryData(
             @RequestParam(value = "imei", required = false) 
             @Pattern(regexp = "^[0-9]*$", message = "IMEI should be number only") String imei,
@@ -445,7 +445,7 @@ public class DeviceController {
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) },
             parameters = { @Parameter(in = ParameterIn.QUERY, name = "isdetailsrequired",
                     schema = @Schema(allowableValues = { "true", "false" }), required = true)})
-    @SecurityRequirement(name = Security.Fields.JWT_AUTH_VALIDATOR, scopes = { "IgniteSystem"})
+    @SecurityRequirement(name = "JwtAuthValidator", scopes = { "IgniteSystem"})
     public ResponseEntity<Object> getAllFactoryData(
             @RequestParam(value = "isdetailsrequired", defaultValue = "true")
                                                         String isdetailsrequired,
@@ -511,7 +511,7 @@ public class DeviceController {
     @Operation(summary = "GET /v4/devices/details", responses = {
         @io.swagger.v3.oas.annotations.responses.ApiResponse(description = "Success", responseCode = "200",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
-    @SecurityRequirement(name = Security.Fields.JWT_AUTH_VALIDATOR, scopes = { "IgniteSystem"})
+    @SecurityRequirement(name = "JwtAuthValidator", scopes = { "IgniteSystem"})
     public ResponseEntity<HcpServicesBaseResponse> getAllFactoryData(
         @RequestParam(value = "imei", required = false) 
         @Pattern(regexp = "^[0-9]*$", message = "IMEI should be number only") String imei,
@@ -622,7 +622,7 @@ public class DeviceController {
     @Operation(summary = "GET /v5/devices/details", responses = {
         @io.swagger.v3.oas.annotations.responses.ApiResponse(description = "Success", responseCode = "200",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
-    @SecurityRequirement(name = Security.Fields.JWT_AUTH_VALIDATOR, scopes = { "IgniteSystem"})
+    @SecurityRequirement(name = "JwtAuthValidator", scopes = { "IgniteSystem"})
     public ResponseEntity<HcpServicesBaseResponse> getAllFactoryDataWithSubscriptionStatus(
         @RequestParam(value = "imei", required = false) 
         @Pattern(regexp = "^[0-9]*$", message = "IMEI should be number only") String imei,
@@ -785,7 +785,7 @@ public class DeviceController {
     @Operation(summary = "DELETE /v1/devices/details", responses = {
         @io.swagger.v3.oas.annotations.responses.ApiResponse(description = "Success", responseCode = "200",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE))})
-    @SecurityRequirement(name = Security.Fields.JWT_AUTH_VALIDATOR, scopes = { "IgniteSystem"})
+    @SecurityRequirement(name = "JwtAuthValidator", scopes = { "IgniteSystem"})
     public ResponseEntity<Object> deleteDevice(
                 @RequestParam(value = "imei", required = false, defaultValue = "") String imei,
                 @RequestParam(value = "serialnumber", required = false, defaultValue = "") 
@@ -837,7 +837,7 @@ public class DeviceController {
     @Operation(summary = "PUT /v1/devices/state", responses = {
         @io.swagger.v3.oas.annotations.responses.ApiResponse(description = "Success", responseCode = "200",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) })
-    @SecurityRequirement(name = Security.Fields.JWT_AUTH_VALIDATOR, scopes = { "IgniteSystem"})
+    @SecurityRequirement(name = "JwtAuthValidator", scopes = { "IgniteSystem"})
     public ResponseEntity<Object> changeDeviceState(@RequestBody @Valid StateChange stateChange)
         throws InvalidAttributeValueException {
         String requestData = stateChange.toString().replaceAll(REQUEST_REGEX, "");
@@ -858,7 +858,7 @@ public class DeviceController {
     @Operation(summary = "PUT /v1/devices/update", responses = {
         @io.swagger.v3.oas.annotations.responses.ApiResponse(description = "Success", responseCode = "200",
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE))})
-    @SecurityRequirement(name = Security.Fields.JWT_AUTH_VALIDATOR, scopes = { "IgniteSystem"})
+    @SecurityRequirement(name = "JwtAuthValidator", scopes = { "IgniteSystem"})
     public ResponseEntity<Object> updateDevice(@RequestBody @Valid DeviceUpdateRequest deviceUpdateRequest,
                                                @RequestHeader(USER_ID) String userId) {
         String requestData = userId.replaceAll(REQUEST_REGEX, "");
@@ -968,7 +968,7 @@ public class DeviceController {
             ParameterIn.QUERY, name = "sortingorder", schema = @Schema(allowableValues = { "asc", "desc" }),
             required = true)
     })
-    @SecurityRequirement(name = Security.Fields.JWT_AUTH_VALIDATOR, scopes = { "IgniteSystem"})
+    @SecurityRequirement(name = "JwtAuthValidator", scopes = { "IgniteSystem"})
     public ResponseEntity<Object> getAllFactoryDataV3(
             HttpServletRequest httpServletRequest,
             @RequestParam(value = "isdetailsrequired", defaultValue = "true") String isdetailsrequired,
@@ -1032,7 +1032,7 @@ public class DeviceController {
                 content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)) },
             parameters = { @Parameter(in = ParameterIn.QUERY, name = "orderby",
                     schema = @Schema(allowableValues = { "asc", "desc" }))})
-    @SecurityRequirement(name = Security.Fields.JWT_AUTH_VALIDATOR, scopes = {"IgniteSystem"})
+    @SecurityRequirement(name = "JwtAuthValidator", scopes = {"IgniteSystem"})
     public ResponseEntity<HcpServicesBaseResponse> findAllDeviceStates(
             @PathVariable("imei") String imei,
             @RequestParam(value = "size", required = false, defaultValue = "") String size,
