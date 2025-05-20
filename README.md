@@ -152,7 +152,7 @@ Please read [SECURITY.md](./SECURITY.md) to raise any security related issues.
 
 ## Support
 
-Please write to us at [csp@harman.com](mailto:csp@harman.com)
+Contact the project developers via the project's "dev" list - [ecsp-dev](https://accounts.eclipse.org/mailing-list/)
 
 ## Troubleshooting
 
