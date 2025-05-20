@@ -45,9 +45,9 @@ The list of tools required to build and run the project:
 
 ### Installation
 
-[How to set up Maven](https://maven.apache.org/install.html)
-
 [Install Java 17](https://www.azul.com/downloads/?version=java-17-lts&package=jdk#zulu)
+
+[How to set up Maven](https://maven.apache.org/install.html)
 
 ### Coding style check configuration
 
