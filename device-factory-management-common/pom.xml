@@ -26,9 +26,12 @@
     <parent>
         <artifactId>device-factory-management</artifactId>
         <groupId>org.eclipse.ecsp</groupId>
-        <version>1.0.1</version>
+        <version>1.0.2</version>
     </parent>
     <artifactId>device-factory-management-common</artifactId>
+    <name>device-factory-management-common</name>
+    <description>Device factory management library for ECSP project</description>
+    <url>https://github.com/eclipse-ecsp/device-factory-management</url>
     <dependencies>
         <dependency>
             <groupId>org.eclipse.ecsp</groupId>
