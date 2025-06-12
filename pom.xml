@@ -29,7 +29,7 @@
 	</parent>
     <groupId>org.eclipse.ecsp</groupId>
     <artifactId>device-factory-management</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <packaging>pom</packaging>
 
     <name>device-factory-management</name>
@@ -151,29 +151,19 @@
         <docker.plugin.version>1.2.2</docker.plugin.version>
         <c3p0.version>0.9.5.5</c3p0.version>
         <jakarta.version>3.0.0</jakarta.version>
-        <tomcat.embed.version>10.1.39</tomcat.embed.version>
+        <tomcat.embed.version>10.1.42</tomcat.embed.version>
         <httpclient.version>4.5.14</httpclient.version>
         <device-common.version>1.0.0</device-common.version>
         <api-registry-common.version>1.1.0</api-registry-common.version>
         <jaxb-api.version>2.3.1</jaxb-api.version>
         <json-smart.version>2.5.2</json-smart.version>
+        <central-publishing-maven-plugin.version>0.7.0</central-publishing-maven-plugin.version>
         <environment>dev</environment>
         <checkstyle.config.location>${project.basedir}/checkstyle.xml
         </checkstyle.config.location>
         <sonar.java.checkstyle.reportPaths>${project.build.directory}/checkstyle-result.xml
         </sonar.java.checkstyle.reportPaths>
     </properties>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
 
     <pluginRepositories>
         <pluginRepository>
@@ -564,27 +554,19 @@
             <properties>
                 <maven.test.skip>true</maven.test.skip>
             </properties>
-            <distributionManagement>
-                <snapshotRepository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository>
-                <repository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </distributionManagement>
             <build>
                 <plugins>
                     <plugin>
-                        <groupId>org.sonatype.plugins</groupId>
-                        <artifactId>nexus-staging-maven-plugin</artifactId>
-                        <version>1.6.13</version>
+                        <groupId>org.sonatype.central</groupId>
+                        <artifactId>central-publishing-maven-plugin</artifactId>
+                        <version>${central-publishing-maven-plugin.version}</version>
                         <extensions>true</extensions>
                         <configuration>
-                            <serverId>ossrh</serverId>
-                            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-                            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+                            <publishingServerId>central</publishingServerId>
+                            <autoPublish>true</autoPublish>
+                            <waitUntil>published</waitUntil>
+                            <centralSnapshotsUrl>https://central.sonatype.com/repository/maven-snapshots/</centralSnapshotsUrl>
+                        <skipPublishing>false</skipPublishing>
                         </configuration>
                     </plugin>
                     <plugin>
@@ -634,16 +616,6 @@
             <properties>
                 <maven.test.skip>false</maven.test.skip>
             </properties>
-            <distributionManagement>
-                <snapshotRepository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-                </snapshotRepository>
-                <repository>
-                    <id>ossrh</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </distributionManagement>
             <build>
                 <plugins>
                     <plugin>
